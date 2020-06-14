@@ -5,7 +5,6 @@ import * as TodoController from './controller/todo_controller.js';
 import { drawUsers, drawSelectUsers } from './components/user_list.js';
 import * as TodoComponent from './components/todo_list.js';
 import * as Form from './utils/form_todo.js';
-import { attachDeleteEvent } from './utils/attach_event.js';
 
 const params = new URLSearchParams(window.location.search);
 
