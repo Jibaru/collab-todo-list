@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List Colaborativa</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/home.html">TODO List Collab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Cambiar usuario</a>
+            </li>
+            
+            </ul>
+            <div>
+                <span class="text-white font-weight-bold"id="user-logged"></span>
+                <span class="text-light ml-2 mr-2">|</span>
+                <span class="text-light workgroup"></span>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        Lista de Usuarios <span class="workgroup"></span>
+                    </div>
+                    <div class="card-body">
+                        <ul id="users-list" class="list-group">
+                    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Lista de tareas</span>
+                        <button id="add-todo" type="button" class="btn btn-primary btn-sm float-right">
+                            Agregar tarea
+                        </button>
+                    </div>
+                    <div id="todos-list" class="card-body">
+                        Sin Tareas
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="todo-modal" tabindex="-1" role="dialog" aria-labelledby="todo-modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="todo-modal-title">Todo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="todo-form">
+                    <div class="modal-body">
+                        <input type="hidden" name="todo-id" id="input-todo-id">
+                        <div class="form-group">
+                            <label for="input-todo-name">Nombre</label>
+                            <input type="text" name="todo-name" id="input-todo-name" class="form-control" placeholder="Nombre de la tarea" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-todo-description">Descripción</label>
+                            <textarea name="todo-description" id="input-todo-description" class="form-control" cols="30" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="select-todo-to">Asignar tarea a</label>
+                            <select id="select-todo-to" class="form-control">
+                                <option>Default select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" id="btn-save-todo" class="btn btn-primary">Guardar</button>
+                        <button type="submit" id="btn-update-todo" class="btn btn-success">Modificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
+    <script src="js/libs/jquery.slim.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/home.js" type="module"></script>
+</body>
+</html>

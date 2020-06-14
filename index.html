@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List Colaborativa</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <div id="signin" class="signin">
+        <div class="container-signin">
+            <div class="card p-4">
+                <form id="form-signin" action="home.html">
+                    <div class="form-group">
+                        <label for="inputUser">Usuario</label>
+                        <input type="text" name="user" id="inputUser" class="form-control" placeholder="Nombre de usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputWorkGroup">Grupo de trabajo</label>
+                        <input type="text" name="workgroup" id="inputWorkGroup" class="form-control text-uppercase" placeholder="Nombre del grupo de trabajo" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/libs/jquery.slim.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/signin.js" type="module"></script>
+</body>
+</html>
