@@ -1,0 +1,33 @@
+{
+  "name": "todo-list-colaborativa",
+  "version": "1.0.0",
+  "description": "Classic TODO list, but collab!",
+  "main": "server.js",
+  "scripts": {
+    "webpack": "webpack",
+    "start": "node src/server.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jibaru/collab-todo-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jibaru/collab-todo-list/issues"
+  },
+  "homepage": "https://github.com/Jibaru/collab-todo-list#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

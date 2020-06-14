@@ -2,8 +2,6 @@
 
 Classic TODO list, but collab!
 
-Made with Vainila Javascript 
-
 ## Made with
 
 - Vainila Javascript
