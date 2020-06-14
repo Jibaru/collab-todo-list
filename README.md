@@ -10,7 +10,23 @@ Classic TODO list, but collab!
 
 ## Instructions
 
-Open index.html in navigator for test.
+- First, install all dependencies:
+```
+npm install
+```
+
+- Test in localhost:
+
+Build app.js
+```
+npm run build
+```
+
+Start the server
+```
+npm run start
+```
+
 
 ## Check in the WEB
 
