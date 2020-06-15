@@ -2,7 +2,7 @@ const todoList = document.getElementById('todos-list');
 
 const btnEdit = (todo) => {
     return `
-    <button class="edit-todo btn btn-success btn-sm btn-block" data-id="${todo.id}">
+    <button class="edit-todo btn btn-info btn-sm btn-block" data-id="${todo.id}">
         Editar
     </button>
     `;
@@ -18,7 +18,7 @@ const btnDelete = (todo) => {
 
 const btnComplete = (todo) => {
     return `
-    <button class="complete-todo btn btn-danger btn-sm btn-block" data-id="${todo.id}">
+    <button class="complete-todo btn btn-success btn-sm btn-block" data-id="${todo.id}">
         Completado
     </button>
     `;
@@ -27,26 +27,26 @@ const btnComplete = (todo) => {
 const todoContent = (todo) => {
     return `
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div>
-                <span id="todo-name-${todo.id}" class="font-weigth-bold">${todo.name}</span>
+                <span id="todo-name-${todo.id}" class="font-weight-bold">${todo.name}</span>
             </div>
             <div>
-                <span>Descripción: </span>
+                <span class="badge badge-primary">Descripción: </span>
                 <span id="todo-description-${todo.id}">${todo.description}</span>
             </div>
             <div>
-                <span>Estado: </span>
+                <span class="badge badge-info">Estado: </span>
                 <span id="todo-status-${todo.id}">${todo.completed ? 'Completado' : 'Sin completar'}</span>
             </div>
             <div>
-                <span>Asignado a:</span>
+                <span class="badge badge-success">Asignado a:</span>
                 <span id="todo-assigned-to-${todo.id}">${todo.assignedTo}</span>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             ${todo.completed ? '': btnEdit(todo)}
-            ${todo.completed ? '': btnDelete(todo)}
+            ${btnDelete(todo)}
             ${todo.completed ? '': btnComplete(todo)}
         </div>
     </div>

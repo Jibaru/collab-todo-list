@@ -23,6 +23,7 @@ UserController.createUser(user);
 const users = UserController.getUsers(user.workgroup);
 const todos = TodoController.getTodos(user.workgroup);
 
+// Set the user and workgroup on home
 document.getElementById('user-logged').textContent = user.name;
 document.querySelector('.workgroup').textContent = user.workgroup;
 
@@ -32,7 +33,6 @@ drawSelectUsers(users);
 TodoComponent.drawTodos(todos);
 
 // Listeners
-
 document.getElementById('add-todo').addEventListener('click', (e) => {
     
     Form.clearTodoForm();
