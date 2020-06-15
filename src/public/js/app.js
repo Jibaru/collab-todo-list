@@ -2,9 +2,10 @@ import Todo from './model/todo.js';
 import User from './model/user.js';
 import * as UserController from './controller/user_controller.js';
 import * as TodoController from './controller/todo_controller.js';
-import { drawUsers, drawSelectUsers } from './components/user_list.js';
+import * as UserComponent from './components/user_list.js';
 import * as TodoComponent from './components/todo_list.js';
 import * as Form from './utils/form_todo.js';
+import { openModal, closeModal } from './utils/modal.js';
 
 const params = new URLSearchParams(window.location.search);
 
@@ -28,8 +29,8 @@ document.getElementById('user-logged').textContent = user.name;
 document.querySelector('.workgroup').textContent = user.workgroup;
 
 // Draw all users, todos
-drawUsers(users);
-drawSelectUsers(users);
+UserComponent.drawUsers(users);
+UserComponent.drawSelectUsers(users);
 TodoComponent.drawTodos(todos);
 
 // Listeners
@@ -38,7 +39,7 @@ document.getElementById('add-todo').addEventListener('click', (e) => {
     Form.clearTodoForm();
     Form.isUpdate(false);
 
-    $('#todo-modal').modal('show');
+    openModal('todo-modal');
 });
 
 document.getElementById('todo-form').addEventListener('submit', (e) => {
@@ -59,7 +60,7 @@ document.getElementById('todo-form').addEventListener('submit', (e) => {
 
     Form.clearTodoForm();
 
-    $('#todo-modal').modal('hide');
+    closeModal('todo-modal');
 });
 
 document.getElementById('todos-list').addEventListener('click', (e) => {
@@ -76,7 +77,7 @@ document.getElementById('todos-list').addEventListener('click', (e) => {
         Form.loadTodoForm(todo);
         Form.isUpdate(true);
 
-        $('#todo-modal').modal('show');
+        openModal('todo-modal');
 
 
     } else if (className.includes('delete-todo')){
